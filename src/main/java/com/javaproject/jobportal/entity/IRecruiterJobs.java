@@ -2,7 +2,7 @@ package com.javaproject.jobportal.entity;
 
 public interface IRecruiterJobs {
 
-	Long getTotalCandidates();
+    Long getTotalCandidates();
 
     int getJob_post_id();
 
@@ -19,5 +19,4 @@ public interface IRecruiterJobs {
     int getCompanyId();
 
     String getName();
-	
 }

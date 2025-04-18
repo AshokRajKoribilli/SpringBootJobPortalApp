@@ -7,52 +7,53 @@ import jakarta.persistence.Id;
 
 @Entity
 public class JobCompany {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer Id;
-	
-	private String name;
-	private String logo;
-	
-	public JobCompany() {
-	}
 
-	public JobCompany(Integer id, String name, String logo) {
-		Id = id;
-		this.name = name;
-		this.logo = logo;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-	public Integer getId() {
-		return Id;
-	}
+    private String name;
+    private String logo;
 
-	public void setId(Integer id) {
-		Id = id;
-	}
+    public JobCompany() {
+    }
 
-	public String getName() {
-		return name;
-	}
+    public JobCompany(Integer id, String name, String logo) {
+        this.id = id;
+        this.name = name;
+        this.logo = logo;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public String getLogo() {
-		return logo;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public void setLogo(String logo) {
-		this.logo = logo;
-	}
+    public String getName() {
+        return name;
+    }
 
-	@Override
-	public String toString() {
-		return "JobCompany [Id=" + Id + ", name=" + name + ", logo=" + logo + "]";
-	}
-	
-	
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
+    }
+
+    @Override
+    public String toString() {
+        return "JobCompany{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", logo='" + logo + '\'' +
+                '}';
+    }
 }

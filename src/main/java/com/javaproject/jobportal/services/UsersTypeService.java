@@ -10,16 +10,14 @@ import com.javaproject.jobportal.repository.UsersTypeRepository;
 
 @Service
 public class UsersTypeService {
-	
-	private final UsersTypeRepository usersTypeRepository;
-	
-	@Autowired
-	public UsersTypeService(UsersTypeRepository usersTypeRepository) {
-		this.usersTypeRepository = usersTypeRepository;
-	}
-	
-	public List<UsersType> getAll(){
-		return usersTypeRepository.findAll();
-	}
 
+    private final UsersTypeRepository usersTypeRepository;
+
+    public UsersTypeService(UsersTypeRepository usersTypeRepository) {
+        this.usersTypeRepository = usersTypeRepository;
+    }
+
+    public List<UsersType> getAll() {
+        return usersTypeRepository.findAll();
+    }
 }

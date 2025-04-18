@@ -11,23 +11,18 @@ import com.javaproject.jobportal.repository.UsersRepository;
 import com.javaproject.jobportal.util.CustomUserDetails;
 
 @Service
-public class CustomUserDetailsService implements UserDetailsService{
-	
-	private final UsersRepository usersRepository;
-	
-	@Autowired
-	public CustomUserDetailsService(UsersRepository usersRepository) {
-		this.usersRepository = usersRepository;
-	}
+public class CustomUserDetailsService implements UserDetailsService {
 
+    private final UsersRepository usersRepository;
 
+    @Autowired
+    public CustomUserDetailsService(UsersRepository usersRepository) {
+        this.usersRepository = usersRepository;
+    }
 
-	@Override
-	public UserDetails loadUserByUsername(String usename) throws UsernameNotFoundException{
-		Users user = usersRepository.findByEmail(usename).orElseThrow(() -> new
-			UsernameNotFoundException("Could Not Find User"));
-		return new CustomUserDetails(user);
-		
-	}
-
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        Users user = usersRepository.findByEmail(username).orElseThrow(() -> new UsernameNotFoundException("Could not found user"));
+        return new CustomUserDetails(user);
+    }
 }
